@@ -12,7 +12,7 @@ namespace HotelApi.Models
         public string EndDate { get; set; } = string.Empty;
         public string TsCreated { get; set; } = string.Empty;
         public string TsUpdated { get; set; } = string.Empty;
-        public decimal totalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
 
         public Guest Guest { get; set; } = null!; // Nav Property
     }

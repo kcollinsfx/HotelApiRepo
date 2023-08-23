@@ -3,6 +3,7 @@ using HotelApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelApi.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230823030756_EditedReservationsTable")]
+    partial class EditedReservationsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,8 +93,6 @@ namespace HotelApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("InvoiceId");
-
-                    b.HasIndex("ReservationId");
 
                     b.ToTable("Invoices");
                 });
@@ -242,17 +243,6 @@ namespace HotelApi.Migrations
                     b.HasKey("RoomTypeId");
 
                     b.ToTable("RoomTypes");
-                });
-
-            modelBuilder.Entity("HotelApi.Models.GuestInvoice", b =>
-                {
-                    b.HasOne("HotelApi.Models.Reservation", "Reservation")
-                        .WithMany()
-                        .HasForeignKey("ReservationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reservation");
                 });
 
             modelBuilder.Entity("HotelApi.Models.Login", b =>

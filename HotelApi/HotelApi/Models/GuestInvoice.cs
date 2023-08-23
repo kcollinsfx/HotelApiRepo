@@ -7,9 +7,12 @@ namespace HotelApi.Models
         [Key]
         public int InvoiceId { get; set; } // Pk
         [Required]
-        public int ReservationId { get; set; }
+        
         public string TsIssued { get; set; } = string.Empty;
         public string TsPaid { get; set; } = string.Empty;
         public string TsCancelled { get; set; } = string.Empty;
+
+        public Reservation Reservation { get; set; } = null!;
+        public int ReservationId { get; set; }
     }
 }

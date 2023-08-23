@@ -16,7 +16,7 @@ namespace HotelApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
-            modelBuilder.Entity<Reservation>().Property(p => p.totalPrice).HasColumnType("decimal(10,2)");
+            modelBuilder.Entity<Reservation>().Property(p => p.TotalPrice).HasColumnType("decimal(10,2)");
             modelBuilder.Entity<Room>().Property(p => p.RoomPrice).HasColumnType("decimal(10,2)");
         
         }

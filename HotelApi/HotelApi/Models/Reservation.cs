@@ -8,10 +8,10 @@ namespace HotelApi.Models
         public int ReservationId { get; set; }
         [Required]
         public int GuestId { get; set; } // FK
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public DateTime TsCreated { get; set; }
-        public DateTime TsUpdated { get; set;}
+        public string StartDate { get; set; } = string.Empty;
+        public string EndDate { get; set; } = string.Empty;
+        public string TsCreated { get; set; } = string.Empty;
+        public string TsUpdated { get; set; } = string.Empty;
         public decimal totalPrice { get; set; }
 
         public Guest Guest { get; set; } = null!; // Nav Property

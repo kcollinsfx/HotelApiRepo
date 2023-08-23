@@ -8,8 +8,8 @@ namespace HotelApi.Models
         public int InvoiceId { get; set; } // Pk
         [Required]
         public int ReservationId { get; set; }
-        public DateTime TsIssued { get; set; }
-        public DateTime TsPaid { get; set; }
-        public DateTime TsCancelled { get; set; }
+        public string TsIssued { get; set; } = string.Empty;
+        public string TsPaid { get; set; } = string.Empty;
+        public string TsCancelled { get; set; } = string.Empty;
     }
 }

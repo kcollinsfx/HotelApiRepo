@@ -10,12 +10,12 @@ namespace HotelApi.Models
         [Required]
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
-        public DateTime DOB { get; set; }   
+        public string DOB { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
         public string Details { get; set; } = string.Empty;
-        public DateTime TsCreated { get; set; }
-        public DateTime TsUpdated { get; set;}
+        public string TsCreated { get; set; } = string.Empty;
+        public string TsUpdated { get; set;} = string.Empty;
 
         // One to One relationship with the Login entity table
         public Login Login { get; set; } = null!;

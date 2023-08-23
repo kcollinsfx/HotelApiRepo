@@ -18,6 +18,7 @@ namespace HotelApi.Models
         {
             modelBuilder.Entity<Reservation>().Property(p => p.totalPrice).HasColumnType("decimal(10,2)");
             modelBuilder.Entity<Room>().Property(p => p.RoomPrice).HasColumnType("decimal(10,2)");
+        
         }
     }
 }

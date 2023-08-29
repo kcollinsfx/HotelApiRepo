@@ -24,7 +24,7 @@ namespace HotelApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GuestInvoice>>> GetInvoices()
         {
-          if (_context.Invoices == null)
+          if (_context.Invoices == null) // If the table contains no values return NotFound
           {
               return NotFound();
           }
